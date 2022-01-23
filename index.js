@@ -4,10 +4,9 @@ const fs = require("fs");
 const axios = require('axios');
 
 // TODO: Create an array of questions for user input
-const questions = [
-    {
+const questions = [{
         name: "username",
-        message: "What is your GitHub username?",        
+        message: "What is your GitHub username?",
     },
     {
         name: "title",
@@ -19,11 +18,11 @@ const questions = [
     },
     {
         name: "installation",
-        message: "Enter installation instructions:",        
+        message: "Enter installation instructions:",
     },
     {
         name: "usage",
-        message: " Enter usage instructions:"        
+        message: " Enter usage instructions:"
     },
     {
         type: "list",
@@ -41,15 +40,31 @@ const questions = [
     },
     {
         name: "email",
-        message: "Enter contact email:",        
+        message: "Enter contact email:",
     }
 ];
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function init() {
 
-// TODO: Create a function to initialize app
-function init() {}
+    inquirer.prompt(questions).then(resp => {
+
+        generateReadMe(resp);
+    });
+}
+
+function generateReadMe(responses) {
+
+    fs.writeFile(
+        "./generated-rm/README.md",
+        template.getReadMe(gitHubUserData, responses),
+        (err) => {
+            if (err)
+                console.log("There was a problem writing the file");
+            else
+                console.log("README was generated in the generated-rm folder");
+        }
+    );
+}
 
 // Function call to initialize app
 init();
