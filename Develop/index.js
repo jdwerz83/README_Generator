@@ -4,7 +4,46 @@ const fs = require("fs");
 const axios = require('axios');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
+    {
+        name: "username",
+        message: "What is your GitHub username?",        
+    },
+    {
+        name: "title",
+        message: "What is the title of your project?",
+    },
+    {
+        name: "description",
+        message: "Describe your project:",
+    },
+    {
+        name: "installation",
+        message: "Enter installation instructions:",        
+    },
+    {
+        name: "usage",
+        message: " Enter usage instructions:"        
+    },
+    {
+        type: "list",
+        name: "license",
+        message: "Select license type:",
+        choices: ["MIT", "GPL", "Apache", "Public"]
+    },
+    {
+        name: "contributors",
+        message: "Who contributed to this project?"
+    },
+    {
+        name: "tests",
+        message: "Enter tests:"
+    },
+    {
+        name: "email",
+        message: "Enter contact email:",        
+    }
+];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
