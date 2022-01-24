@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require("inquirer");
 const fs = require("fs");
-const axios = require('axios');
+const template = require("./template.js");
 
 // TODO: Create an array of questions for user input
 const questions = [{
@@ -22,7 +22,7 @@ const questions = [{
     },
     {
         name: "usage",
-        message: " Enter usage instructions:"
+        message: "Enter usage instructions:"
     },
     {
         type: "list",
@@ -56,7 +56,7 @@ function generateReadMe(responses) {
 
     fs.writeFile(
         "./generated-rm/README.md",
-        template.getReadMe(gitHubUserData, responses),
+        template.getReadMe(responses),
         (err) => {
             if (err)
                 console.log("There was a problem writing the file");
