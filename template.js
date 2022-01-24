@@ -1,10 +1,9 @@
-module.exports.getReadMe = (userData, responses) => {
-  function blank(response) {
-    return response.length === 0 ? "None" : response;
-  }
+module.exports.getReadMe = (data) => {
+  
 
-  return `# ${blank(responses.title)}
-    ${blank(responses.description)}
+  return `# ${data.title}
+    ${badge}
+    ${data.description}
 
     ### Contents
     1. [Installation Instructions](#installation-instructions)
@@ -14,22 +13,22 @@ module.exports.getReadMe = (userData, responses) => {
     5. [Questions](#questions)
 
     ## Installation Instructions
-    ${blank(responses.installation)}
+    ${data.installation}
 
     ## Usage
-    ${blank(responses.usage)}
+    ${data.usage}
 
     ## License
-    ${responses.license}
+    ${data.license}
 
     ## Contributors
-    ${blank(responses.contributors)}
+    ${data.contributors}
 
     ## Tests
-    ${blank(responses.tests)}
+    ${data.tests}
 
     ## Questions
     Contatct: ${userData.login}
-    Email: <${responses.email}>
+    Email: <${data.email}>
     `;
 };

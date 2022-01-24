@@ -46,17 +46,17 @@ const questions = [{
 
 function init() {
 
-    inquirer.prompt(questions).then(resp => {
+    inquirer.prompt(questions).then(data => {
 
-        generateReadMe(resp);
+        generateReadMe(data);
     });
 }
 
-function generateReadMe(responses) {
+function generateReadMe(data) {
 
     fs.writeFile(
         "./generated-rm/README.md",
-        template.getReadMe(responses),
+        template.getReadMe(data),
         (err) => {
             if (err)
                 console.log("There was a problem writing the file");
