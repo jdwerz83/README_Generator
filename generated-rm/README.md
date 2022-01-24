@@ -1,8 +1,5 @@
-module.exports.getReadMe = (data) => {
-  
-
-  return `# ${data.title}
-    ${data.description}
+# jon
+    jon
 
     ### Contents
     1. [Installation Instructions](#installation-instructions)
@@ -12,22 +9,21 @@ module.exports.getReadMe = (data) => {
     5. [Questions](#questions)
 
     ## Installation Instructions
-    ${data.installation}
+    jon
 
     ## Usage
-    ${data.usage}
+    jon
 
     ## License
-    ${data.license}
+    MIT
 
     ## Contributors
-    ${data.contributors}
+    jon
 
     ## Tests
-    ${data.tests}
+    jon
 
     ## Questions
-    Contact: ${data.username}
-    Email: <${data.email}>
-    `;
-};
+    Contatct: jon
+    Email: <jon>
+    
